@@ -1,5 +1,4 @@
 const firebaseAuth = require("firebase/auth");
-
 exports.postServidor = async (req, res) => {
   try {
     const { email, password } = req.body;

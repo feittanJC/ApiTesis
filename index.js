@@ -17,8 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/comidas', require('./routes/comida'));
 app.use('/api/photos', require('./routes/photo'));
 app.use('/api/categoria',require('./routes/categoria'));
+app.use('/api/factura', require('./routes/factura'));
 app.use('/login', require('./routes/login'));
-app.use('/pago',require('./routes/pago'));
 
 app.use('/uploads', express.static(path.resolve('uploads')));
 

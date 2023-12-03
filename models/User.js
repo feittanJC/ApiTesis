@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
-const jwt = require('jsonwebtoken');
-const config = require('../config/global')
+
 const Usuario = sequelize.sequelize.define('Usuario',{
     id:{
         type: DataTypes.INTEGER,
@@ -33,3 +32,7 @@ const Usuario = sequelize.sequelize.define('Usuario',{
 module.exports = {
     Usuario
 }
+
+// const Factura = require('./Factura');
+// Usuario.hasMany(Factura, { foreignKey: 'factura_id' });
+
