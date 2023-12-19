@@ -101,11 +101,8 @@ exports.actualizarComida = async (req, res) => {
 
 exports.verComida = async (req, res) => {
   try {
-    verifyJwt(req, res, function (err) {
-      if (err) {
-        console.log(err);
-        return res.status(500).send("Error de autenticación");
-      } else {
+
+
         const id = req.params.id;
         Comida.findOne({ where: { id: id } }).then((comidas) => {
 
@@ -115,8 +112,8 @@ exports.verComida = async (req, res) => {
           console.log("Registros encontrados:", comidas.dataValues);
           res.json(comidas.dataValues);
         });
-      }
-    });
+
+
   } catch (error) {
     console.log(error);
     res.status(500).send("Hubo un error"); 

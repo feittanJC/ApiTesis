@@ -90,6 +90,20 @@ exports.getOneFactura = async (req, res) =>{
   }
 }
 
+exports.getFacturaDetails = async ( req, res ) =>{
+  try{
+
+    const {facturaId} = req.body
+
+    const detalles = await FacturaDetalle.findAll({where:{detalleId: facturaId}});
+
+    res.json(detalles);
+  }catch{
+    console.log(err);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+}
+
 // exports.postPago = async (req, res) => {
 //   try {
 //     const { nombre_usuario, correo_usuario, monto, comida } = req.body;
