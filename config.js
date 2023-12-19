@@ -3,7 +3,7 @@ const {config} = require('dotenv')
 
 config()
 
-
+console.log(process.env.PORT)
 
 
 const PORT = process.env.PORT || 4000
